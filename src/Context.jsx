@@ -21,7 +21,7 @@ const ContextProvider = ({ children }) => {
     setStep(4);
   };
 
-  return <Context.Provider value={{ step }}>{children}</Context.Provider>;
+  return <Context.Provider value={{ step,setStep }}>{children}</Context.Provider>;
 };
 
 export default ContextProvider;

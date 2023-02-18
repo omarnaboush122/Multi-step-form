@@ -5,7 +5,7 @@ const Navbar = () => {
   const [steps, setSteps] = useState([1, 2, 3, 4]);
 
   const allStepsElements = steps.map((singleStep, i) => (
-    <Step key={i} singleStep={singleStep} />
+    <Step key={i} singleStep={singleStep} i={i} />
   ));
 
   return (

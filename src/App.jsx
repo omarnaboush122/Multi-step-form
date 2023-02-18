@@ -1,9 +1,10 @@
+import Sidebar from "./components/Sidebar";
 
 
 const App = () => {
   return (
     <div>
-      Form
+      <Sidebar/>
     </div>
   );
 }

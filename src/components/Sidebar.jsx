@@ -1,16 +1,18 @@
-
+import { useState } from "react";
+import Step from "./Step";
 
 const Navbar = () => {
+  const [steps, setSteps] = useState([1, 2, 3, 4]);
+
+  const allStepsElements = steps.map((singleStep, i) => (
+    <Step key={i} singleStep={singleStep} />
+  ));
+
   return (
     <div className="sidebar h-52">
-      <div className="flex justify-center p-5 mt-3">
-      <div className="w-8 h-8 rounded-full flex justify-center items-center mr-5 border border-White text-White cursor-pointer">1</div>
-      <div className="w-8 h-8 rounded-full flex justify-center items-center mr-5 border border-White text-White cursor-pointer">2</div>
-      <div className="w-8 h-8 rounded-full flex justify-center items-center mr-5 border border-White text-White cursor-pointer">3</div>
-      <div className="w-8 h-8 rounded-full flex justify-center items-center mr-5 border border-White text-White cursor-pointer">4</div>
-      </div>
+      <div className="flex justify-center p-5">{allStepsElements}</div>
     </div>
   );
-}
+};
 
 export default Navbar;

@@ -9,7 +9,7 @@ const Navbar = () => {
   ));
 
   return (
-    <div className="sidebar h-52">
+    <div className="sidebar w-[30%] h-full rounded-xl">
       <div className="flex justify-center p-5">{allStepsElements}</div>
     </div>
   );

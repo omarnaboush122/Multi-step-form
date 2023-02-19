@@ -1,7 +1,7 @@
 const PersonalInfo = () => {
   return (
-    <div className="w-full h-96">
-      <div className=" py-10 bg-Alabaster px-5 w-[90vw] mx-auto flex flex-col absolute top-24 left-5 rounded-xl">
+    <div className="personal w-full h-96">
+      <div className=" py-10 px-5 w-[90vw] mx-auto flex flex-col absolute top-24 left-5 rounded-xl sm:left-9 md:relative md:flex md:top-0 md:left-0">
         <h1 className="mb-1 text-Marineblue text-3xl font-bold">
           Personal info
         </h1>

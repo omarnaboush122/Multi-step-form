@@ -4,7 +4,7 @@ import Sidebar from "./components/Sidebar";
 
 const App = () => {
   return (
-    <div className="bg-Lightblue relative">
+    <div className="main bg-Alabaster p-3 w-[900px] h-[500px] flex rounded-xl">
       <Sidebar/>
       <PersonalInfo/>
     </div>

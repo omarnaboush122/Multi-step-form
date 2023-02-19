@@ -1,7 +1,7 @@
 const PersonalInfo = () => {
   return (
-    <div className="personal w-full h-96">
-      <div className=" py-10 px-5 w-[90vw] mx-auto flex flex-col absolute top-24 left-5 rounded-xl sm:left-9 md:relative md:flex md:top-0 md:left-0">
+    <div className="w-full h-full flex justify-center md:w-[70%] md:h-[90%]">
+      <div className="w-[90vw] h-auto py-10 px-5 flex flex-col absolute top-[140px] rounded-xl md:relative md:flex md:top-0 md:left-0">
         <h1 className="mb-1 text-Marineblue text-3xl font-bold">
           Personal info
         </h1>
@@ -26,7 +26,7 @@ const PersonalInfo = () => {
             <label htmlFor="phone" className="block mb-1 text-Marineblue text-sm font-bold">Phone Number</label>
             <input className="w-full h-10 border border-Coolgray text-Marineblue px-3 rounded-md outline-none" type="number" placeholder="e.g. +961 81 346307" id="phone" />
           </div>
-          <div className="absolute -bottom-[140px] right-3">
+          <div className="absolute -bottom-[70px] right-3">
           <button className="text-White bg-Marineblue py-3 px-6 rounded-md cursor-pointer">Next Step</button>
           </div>
         </form>

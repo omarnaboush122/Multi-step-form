@@ -8,10 +8,19 @@ const PersonalInfo = () => {
   const [isEmailError,setIsEmailError] = useState(false);
   const [isPhoneNumberError,setIsPhoneNumberError] = useState(false);
 
+  const nameValidation = (name) => {
+    let nameRegex = /[a-z]/i;
+    return nameRegex.test(name);
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("submitted");
+    
+    if(nameValidation(name)) {
+      setIsNameError(false)
+    } else {
+      setIsNameError(true);
+    }
   }
   return (
     <div className="w-full h-full flex justify-center md:w-[60%] md:h-[90%] lg:w-[65%]">
@@ -38,7 +47,7 @@ const PersonalInfo = () => {
               onChange={(e) => setName(e.target.value)}
               value={name}
             />
-            { isNameError && <p className="absolute top-1 right-0 text-Strawberryred text-xs font-medium md:text-sm md:right-12">This field is required</p> }
+            { isNameError && <p className="absolute top-2 right-0 text-Strawberryred text-xs font-bold md:right-12">Please input only letters from A-Z</p> }
           </div>
           <div className="relative">
             <label
@@ -55,7 +64,7 @@ const PersonalInfo = () => {
               onChange={(e) => setEmail(e.target.value)}
               value={email}
             />
-            { isEmailError && <p className="absolute top-1 right-0 text-Strawberryred text-xs font-medium md:text-sm md:right-12">This field is required</p> }
+            { isEmailError && <p className="absolute top-2 right-0 text-Strawberryred text-xs font-bold md:right-12">This field is required</p> }
           </div>
           <div>
             <label
@@ -72,7 +81,7 @@ const PersonalInfo = () => {
               onChange={(e) => setPhoneNumber(e.target.value)}
               value={phoneNumber}
             />
-            { isPhoneNumberError && <p className="absolute top-1 right-0 text-Strawberryred text-xs font-medium md:text-sm md:right-12">This field is required</p> }
+            { isPhoneNumberError && <p className="absolute top-2 right-0 text-Strawberryred text-xs font-bold md:right-12">This field is required</p> }
           </div>
           <div className="absolute -bottom-[70px] right-[20px] md:-bottom-8 md:right-[72px]">
             <button className="text-White bg-Marineblue py-3 px-6 rounded-md cursor-pointer hover:bg-Purplishblue transition-colors duration-300">

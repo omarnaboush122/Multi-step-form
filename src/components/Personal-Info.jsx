@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const PersonalInfo = () => {
+const PersonalInfo = ({setStep}) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -34,6 +34,10 @@ const PersonalInfo = () => {
     validatePhoneNumber(phoneNumber)
       ? setIsPhoneNumberError(false)
       : setIsPhoneNumberError(true);
+
+      if(!isNameError && !isEmailError && !isPhoneNumberError) {
+        setStep(2);
+      }
   };
   return (
     <div className="w-full h-full flex justify-center md:w-[60%] md:h-[90%] lg:w-[65%]">
@@ -80,7 +84,7 @@ const PersonalInfo = () => {
                 isEmailError && "border-Strawberryred"
               }`}
               type="email"
-              placeholder="e.g. omarnaboush509@gmail"
+              placeholder="e.g. omarnaboush509@gmail.com"
               id="email"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
@@ -103,7 +107,7 @@ const PersonalInfo = () => {
                 isPhoneNumberError && "border-Strawberryred"
               }`}
               type="number"
-              placeholder="e.g. +961 81 346307"
+              placeholder="e.g. 81346307"
               id="phone"
               onChange={(e) => setPhoneNumber(e.target.value)}
               value={phoneNumber}

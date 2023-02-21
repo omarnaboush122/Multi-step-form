@@ -1,8 +1,6 @@
-import { useContext } from "react";
-import { Context } from "../Context";
 
-const Navbar = () => {
-  const { step } = useContext(Context);
+
+const Sidebar = ({step}) => {
 
   return (
     <div className="sidebar h-[30%] w-full rounded-none md:w-[30%] md:h-full md:rounded-xl">
@@ -64,4 +62,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Sidebar;

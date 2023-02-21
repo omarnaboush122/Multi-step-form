@@ -2,6 +2,7 @@ import { useState } from "react";
 
 const Plans = () => {
   const [plan,setPlan] = useState(1);
+  const [time,setTime] = useState("monthly");
 
   const firstPlan = () => {
     setPlan(1);
@@ -12,6 +13,8 @@ const Plans = () => {
   const thirdPlan = () => {
     setPlan(3);
   }
+
+
   return (
     <div className="w-full h-full flex justify-center md:w-[60%] md:h-[90%] lg:w-[65%]">
       <div className="w-[90vw] h-auto py-10 px-5 flex flex-col absolute top-[140px] rounded-xl md:relative md:flex md:top-0 md:left-0 md:w-[44vw]">
@@ -40,9 +43,18 @@ const Plans = () => {
             </div>
           </div>
         </div>
+        <div className="flex justify-evenly items-center bg-Magnolia mt-8 py-3 px-6">
+          <p>Monthly</p>
+          <div className="w-[50px] h-[25px] bg-Marineblue flex items-center m-auto px-1 rounded-3xl cursor-pointer transition-all duration-300 ">
+            <div className="bg-Alabaster rounded-full p-2 cursor-pointer transition-all duration-200"></div>
+          </div>
+          <p>Yearly</p>
+        </div>
       </div>
     </div>
   );
 }
+
+
 
 export default Plans;

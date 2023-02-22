@@ -1,4 +1,5 @@
 import { useState } from "react";
+import AddOns from "./components/AddOns";
 import PersonalInfo from "./components/Personal-Info";
 import Plans from "./components/Plans";
 import Sidebar from "./components/Sidebar";
@@ -12,6 +13,7 @@ const App = () => {
       <Sidebar step={step}/>
     { step === 1 && <PersonalInfo setStep={setStep} /> }
     { step === 2 && <Plans setStep={setStep} /> }
+    { step === 3 && <AddOns setStep={setStep} /> }
     </div>
   );
 }

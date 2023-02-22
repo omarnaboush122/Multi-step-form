@@ -24,8 +24,8 @@ const Plans = ({ setStep }) => {
 
   return (
     <div className="w-full h-full flex justify-center md:w-[60%] md:h-[90%] lg:w-[65%]">
-      <div className="w-[90vw] h-auto py-10 px-5 flex flex-col absolute top-[140px] rounded-xl md:relative md:flex md:top-0 md:left-0 md:w-[40vw]">
-        <h1 className="mb-1 text-Marineblue text-3xl font-bold">
+      <div className="w-[90vw] h-auto py-10 px-5 flex flex-col absolute top-[150px] rounded-xl md:relative md:flex md:top-0 md:left-0 md:w-[40vw]">
+        <h1 className="mb-1 text-Marineblue text-3xl font-bold md:text-4xl">
           Select your plan
         </h1>
         <p className="text-Coolgray text-lg">
@@ -120,7 +120,11 @@ const Plans = ({ setStep }) => {
             Yearly
           </p>
         </div>
-        <div className="flex justify-between items-center mt-16">
+        <div
+          className={`flex justify-between items-center ${
+            time === "monthly" ? "mt-20" : "mt-14"
+          }`}
+        >
           <button
             onClick={() => setStep(1)}
             className="text-Coolgray text-xl cursor-pointer hover:text-Marineblue hover:font-bold transition-colors duration-300"

@@ -58,8 +58,8 @@ const PersonalInfo = ({ setStep }) => {
 
   return (
     <div className="w-full h-full flex justify-center md:w-[60%] md:h-[90%] lg:w-[65%]">
-      <div className="w-[90vw] h-auto py-10 px-5 flex flex-col absolute top-[140px] rounded-xl md:relative md:flex md:top-0 md:left-0 md:w-[44vw]">
-        <h1 className="mb-1 text-Marineblue text-3xl font-bold">
+      <div className="w-[90vw] h-auto py-10 px-5 flex flex-col absolute top-[150px] rounded-xl md:relative md:flex md:top-0 md:left-0 md:w-[40vw]">
+        <h1 className="mb-1 text-Marineblue text-3xl font-bold md:text-4xl">
           Personal info
         </h1>
         <p className="text-Coolgray text-lg">
@@ -74,7 +74,7 @@ const PersonalInfo = ({ setStep }) => {
               Name
             </label>
             <input
-              className={`w-full h-10 border border-Coolgray text-Marineblue px-3 rounded-md outline-none md:w-[90%] ${
+              className={`w-full h-10 border border-Coolgray text-Marineblue px-3 rounded-md outline-none focus:border-Purplishblue md:w-[90%] ${
                 isNameError && "border-Strawberryred"
               }`}
               type="text"
@@ -97,7 +97,7 @@ const PersonalInfo = ({ setStep }) => {
               Email Address
             </label>
             <input
-              className={`w-full h-10 border border-Coolgray text-Marineblue px-3 rounded-md outline-none md:w-[90%] ${
+              className={`w-full h-10 border border-Coolgray text-Marineblue px-3 rounded-md outline-none focus:border-Purplishblue md:w-[90%] ${
                 isEmailError && "border-Strawberryred"
               }`}
               type="email"
@@ -120,7 +120,7 @@ const PersonalInfo = ({ setStep }) => {
               Phone Number
             </label>
             <input
-              className={`w-full h-10 border border-Coolgray text-Marineblue px-3 rounded-md outline-none md:w-[90%] ${
+              className={`w-full h-10 border border-Coolgray text-Marineblue px-3 rounded-md outline-none focus:border-Purplishblue md:w-[90%] ${
                 isPhoneNumberError && "border-Strawberryred"
               }`}
               type="number"

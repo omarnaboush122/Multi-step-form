@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Plans = () => {
+const Plans = ({ setStep }) => {
   const [plan, setPlan] = useState(1);
   const [time, setTime] = useState("monthly");
 
@@ -24,7 +24,7 @@ const Plans = () => {
 
   return (
     <div className="w-full h-full flex justify-center md:w-[60%] md:h-[90%] lg:w-[65%]">
-      <div className="w-[90vw] h-auto py-10 px-5 flex flex-col absolute top-[140px] rounded-xl md:relative md:flex md:top-0 md:left-0 md:w-[44vw]">
+      <div className="w-[90vw] h-auto py-10 px-5 flex flex-col absolute top-[140px] rounded-xl md:relative md:flex md:top-0 md:left-0 md:w-[40vw]">
         <h1 className="mb-1 text-Marineblue text-3xl font-bold">
           Select your plan
         </h1>
@@ -97,7 +97,13 @@ const Plans = () => {
           </div>
         </div>
         <div className="flex justify-evenly items-center bg-Magnolia mt-8 py-3 px-6 rounded-lg md:justify-center">
-          <p className={`${time === "monthly" ? "text-Marineblue": "text-Coolgray"} font-bold`}>Monthly</p>
+          <p
+            className={`${
+              time === "monthly" ? "text-Marineblue" : "text-Coolgray"
+            } font-bold`}
+          >
+            Monthly
+          </p>
           <div className="w-[50px] h-[25px] bg-Marineblue flex items-center m-auto px-1 rounded-3xl cursor-pointer transition-all duration-300 md:mx-8 ">
             <div
               className={`bg-Alabaster rounded-full p-2 cursor-pointer ${
@@ -106,7 +112,27 @@ const Plans = () => {
               onClick={changePlanTime}
             ></div>
           </div>
-          <p className={`${time === "yearly" ? "text-Marineblue": "text-Coolgray"} font-bold`}>Yearly</p>
+          <p
+            className={`${
+              time === "yearly" ? "text-Marineblue" : "text-Coolgray"
+            } font-bold`}
+          >
+            Yearly
+          </p>
+        </div>
+        <div className="flex justify-between items-center mt-16">
+          <button
+            onClick={() => setStep(1)}
+            className="text-Coolgray text-xl cursor-pointer hover:text-Marineblue hover:font-bold transition-colors duration-300"
+          >
+            Go Back
+          </button>
+          <button
+            onClick={() => setStep(3)}
+            className="text-White bg-Marineblue py-3 px-6 rounded-md cursor-pointer hover:bg-Purplishblue transition-colors duration-300"
+          >
+            Next Step
+          </button>
         </div>
       </div>
     </div>

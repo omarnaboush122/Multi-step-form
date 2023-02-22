@@ -122,7 +122,7 @@ const Plans = ({ setStep }) => {
         </div>
         <div
           className={`flex justify-between items-center ${
-            time === "monthly" ? "mt-24" : "mt-12"
+            time === "monthly" ? "mt-16" : "mt-8"
           }`}
         >
           <button

@@ -74,7 +74,7 @@ const PersonalInfo = ({ setStep }) => {
               Name
             </label>
             <input
-              className={`w-full h-10 border border-Coolgray text-Marineblue px-3 rounded-md outline-none focus:border-Purplishblue md:w-[90%] ${
+              className={`w-full h-10 border border-Coolgray text-Marineblue px-3 rounded-md outline-none focus:border-Purplishblue ${
                 isNameError && "border-Strawberryred"
               }`}
               type="text"
@@ -97,7 +97,7 @@ const PersonalInfo = ({ setStep }) => {
               Email Address
             </label>
             <input
-              className={`w-full h-10 border border-Coolgray text-Marineblue px-3 rounded-md outline-none focus:border-Purplishblue md:w-[90%] ${
+              className={`w-full h-10 border border-Coolgray text-Marineblue px-3 rounded-md outline-none focus:border-Purplishblue ${
                 isEmailError && "border-Strawberryred"
               }`}
               type="email"
@@ -120,7 +120,7 @@ const PersonalInfo = ({ setStep }) => {
               Phone Number
             </label>
             <input
-              className={`w-full h-10 border border-Coolgray text-Marineblue px-3 rounded-md outline-none focus:border-Purplishblue md:w-[90%] ${
+              className={`w-full h-10 border border-Coolgray text-Marineblue px-3 rounded-md outline-none focus:border-Purplishblue ${
                 isPhoneNumberError && "border-Strawberryred"
               }`}
               type="number"
@@ -135,7 +135,7 @@ const PersonalInfo = ({ setStep }) => {
               </p>
             )}
           </div>
-          <div className="flex justify-between items-center mt-20">
+          <div className="w-full flex justify-between items-center mt-16">
             <div></div>
             <button className="text-White bg-Marineblue py-3 px-6 rounded-md cursor-pointer hover:bg-Purplishblue transition-colors duration-300">
               Next Step

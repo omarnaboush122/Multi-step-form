@@ -3,8 +3,8 @@
 const Sidebar = ({step}) => {
 
   return (
-    <div className="sidebar h-[30%] w-full rounded-none md:w-[30%] md:h-full md:rounded-xl">
-      <div className="flex justify-center items-center w-full h-full p-5 md:flex-col md:items-start md:justify-start">
+    <div className="sidebar h-[35%] w-full rounded-none md:w-[35%] md:h-full md:rounded-xl">
+      <div className="flex justify-center items-center w-full h-full p-9 md:flex-col md:items-start md:justify-start">
         <div className="md:flex md:items-center gap-5">
           <div
             className={`w-10 h-10 rounded-full flex justify-center items-center -mt-5 mr-5 border border-White cursor-pointer ${

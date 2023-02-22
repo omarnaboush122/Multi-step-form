@@ -57,8 +57,8 @@ const PersonalInfo = ({ setStep }) => {
   }, [isNameError, isEmailError, isPhoneNumberError]);
 
   return (
-    <div className="w-full h-full flex justify-center md:w-[60%] md:h-[90%] lg:w-[65%]">
-      <div className="w-[90vw] h-auto py-10 px-5 flex flex-col absolute top-[150px] rounded-xl md:relative md:flex md:top-0 md:left-0 md:w-[40vw]">
+    <div className="w-full h-full relative flex justify-center md:w-[60%] md:h-[90%] lg:w-[65%]">
+      <div className="w-[430px] mx-auto h-auto py-10 px-5 flex flex-col rounded-xl">
         <h1 className="mb-1 text-Marineblue text-3xl font-bold md:text-4xl">
           Personal info
         </h1>
@@ -135,7 +135,8 @@ const PersonalInfo = ({ setStep }) => {
               </p>
             )}
           </div>
-          <div className="absolute -bottom-[70px] right-[20px] md:-bottom-8 md:right-[72px]">
+          <div className="flex justify-between items-center mt-20">
+            <div></div>
             <button className="text-White bg-Marineblue py-3 px-6 rounded-md cursor-pointer hover:bg-Purplishblue transition-colors duration-300">
               Next Step
             </button>

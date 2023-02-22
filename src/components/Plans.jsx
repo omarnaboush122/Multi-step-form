@@ -23,8 +23,8 @@ const Plans = ({ setStep }) => {
   };
 
   return (
-    <div className="w-full h-full flex justify-center md:w-[60%] md:h-[90%] lg:w-[65%]">
-      <div className="w-[90vw] h-auto py-10 px-5 flex flex-col absolute top-[150px] rounded-xl md:relative md:flex md:top-0 md:left-0 md:w-[40vw]">
+    <div className="w-full h-full relative flex justify-center md:w-[60%] md:h-[90%] lg:w-[65%]">
+      <div className="w-[430px] mx-auto h-auto py-10 px-5 flex flex-col rounded-xl">
         <h1 className="mb-1 text-Marineblue text-3xl font-bold md:text-4xl">
           Select your plan
         </h1>
@@ -122,7 +122,7 @@ const Plans = ({ setStep }) => {
         </div>
         <div
           className={`flex justify-between items-center ${
-            time === "monthly" ? "mt-20" : "mt-14"
+            time === "monthly" ? "mt-24" : "mt-12"
           }`}
         >
           <button

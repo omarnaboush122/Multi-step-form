@@ -1,22 +1,51 @@
 const AddOns = () => {
   return (
-    <div className="w-full h-full flex justify-center md:w-[60%] md:h-[90%] lg:w-[65%]">
-      <div className="w-[90vw] h-auto py-10 px-5 flex flex-col absolute top-[140px] rounded-xl md:relative md:flex md:top-0 md:left-0 md:w-[40vw]">
-        <h1 className="mb-1 text-Marineblue text-3xl font-bold md:text-4xl">
+    <div className="w-full h-full relative flex justify-center sm:w-[60%] sm:h-[90%] lg:w-[65%]">
+      <div className="w-[430px] mx-auto h-auto py-10 px-5 flex flex-col rounded-xl">
+        <h1 className="mb-1 text-Marineblue text-3xl font-bold sm:text-4xl">
           Pick add-ons
         </h1>
         <p className="text-Coolgray text-lg">
           Add-ons help enhance your gaming experience.
         </p>
-        <div>
-          <div className="flex items-center w-full px-6 py-3 mt-10 bg-Alabaster border border-Purplishblue rounded-xl cursor-pointer">
-            <input type="checkbox" className="h-10 w-10"/>
-            <div className="mx-5">
-              <h3 className="text-sm text-Marineblue font-bold mb-1">Online service</h3>
-              <p className="text-xs text-Coolgray">Access to multiplayer games</p>
+        <div className="flex flex-col mt-10 gap-6">
+          <div className="flex justify-around items-center w-full py-2 px-4 bg-Alabaster border border-Purplishblue rounded-xl cursor-pointer">
+            <input type="checkbox" className="w-4 h-5 flex-[0.2] rounded-sm border border-Coolgray outline-none"/>
+            <div className="mx-5 flex-[0.6]">
+              <h3 className="text-sm text-Marineblue font-bold mb-1 md:text-base">Online service</h3>
+              <p className="text-xs text-Coolgray md:text-sm">Access to multiplayer games</p>
             </div>
-            <p className="text-sm text-Purplishblue">+$1/mo</p>
+            <p className="text-sm flex-[0.2] text-Purplishblue">+$1/mo</p>
           </div>
+          <div className="flex justify-around items-center w-full py-2 px-4 bg-Alabaster border border-Purplishblue rounded-xl cursor-pointer">
+            <input type="checkbox" className="w-4 h-5 flex-[0.2] rounded-sm border border-Coolgray outline-none"/>
+            <div className="mx-5 flex-[0.6]">
+              <h3 className="text-sm text-Marineblue font-bold mb-1 md:text-base">Larger storage</h3>
+              <p className="text-xs text-Coolgray md:text-sm">Extra 1TB of cloud save</p>
+            </div>
+            <p className="text-sm flex-[0.2] text-Purplishblue">+$2/mo</p>
+          </div>
+          <div className="flex justify-around items-center w-full py-2 px-4 bg-Alabaster border border-Purplishblue rounded-xl cursor-pointer">
+            <input type="checkbox" className="w-4 h-5 flex-[0.2] rounded-sm border border-Coolgray outline-none"/>
+            <div className="mx-5 flex-[0.6]">
+              <h3 className="text-sm text-Marineblue font-bold mb-1 md:text-base">Customizable Profile</h3>
+              <p className="text-xs text-Coolgray md:text-sm">Custom theme on your profile</p>
+            </div>
+            <p className="text-sm flex-[0.2] text-Purplishblue">+$2/mo</p>
+          </div>
+        </div>
+        <div
+          className="flex justify-between items-center mt-20">
+          <button
+            className="text-Coolgray text-xl cursor-pointer hover:text-Marineblue hover:font-bold transition-colors duration-300"
+          >
+            Go Back
+          </button>
+          <button
+            className="text-White bg-Marineblue py-3 px-6 rounded-md cursor-pointer hover:bg-Purplishblue transition-colors duration-300"
+          >
+            Next Step
+          </button>
         </div>
       </div>
     </div>

@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const PersonalInfo = ({setStep}) => {
+const PersonalInfo = ({ setStep }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [isNameError, setIsNameError] = useState(false);
   const [isEmailError, setIsEmailError] = useState(false);
   const [isPhoneNumberError, setIsPhoneNumberError] = useState(false);
+  const [isNameSuccess, setIsNameSuccess] = useState(false);
+  const [isEmailSuccess, setIsEmailSuccess] = useState(false);
+  const [isPhoneNumberSuccess, setIsPhoneNumberSuccess] = useState(false);
 
   const validateName = (name) => {
     return name.match(/^[a-zA-Z ]{2,30}$/);
@@ -29,16 +32,49 @@ const PersonalInfo = ({setStep}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    validateName(name) ? setIsNameError(false) : setIsNameError(true);
-    validateEmail(email) ? setIsEmailError(false) : setIsEmailError(true);
-    validatePhoneNumber(phoneNumber)
-      ? setIsPhoneNumberError(false)
-      : setIsPhoneNumberError(true);
+    if (validateName(name)) {
+      setIsNameSuccess(true);
+      setIsNameError(false);
+    } else {
+      setIsNameSuccess(false);
+      setIsNameError(true);
+    }
 
-      if(!isNameError && !isEmailError && !isPhoneNumberError) {
-        setStep(2);
-      }
+    if (validateEmail(email)) {
+      setIsEmailSuccess(true);
+      setIsEmailError(false);
+    } else {
+      setIsEmailSuccess(false);
+      setIsEmailError(true);
+    }
+
+    if (validatePhoneNumber(phoneNumber)) {
+      setIsPhoneNumberSuccess(true);
+      setIsPhoneNumberError(false);
+    } else {
+      setIsPhoneNumberSuccess(false);
+      setIsPhoneNumberError(true);
+    }
+
+    if (
+      validateName(name) &&
+      validateEmail(email) &&
+      validatePhoneNumber(phoneNumber)
+    ) {
+      setStep(2);
+    }
   };
+
+  useEffect(() => {
+    let timeOut = setTimeout(() => {
+      setIsNameError(false);
+      setIsEmailError(false);
+      setIsPhoneNumberError(false);
+    }, 3000);
+    return () => {
+      clearTimeout(timeOut);
+    };
+  }, [isNameError, isEmailError, isPhoneNumberError]);
   return (
     <div className="w-full h-full flex justify-center md:w-[60%] md:h-[90%] lg:w-[65%]">
       <div className="w-[90vw] h-auto py-10 px-5 flex flex-col absolute top-[140px] rounded-xl md:relative md:flex md:top-0 md:left-0 md:w-[44vw]">

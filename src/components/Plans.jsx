@@ -14,6 +14,14 @@ const Plans = () => {
     setPlan(3);
   }
 
+  const changePlanTime = () => {
+    if(time === "monthly") {
+      setTime("yearly")
+    } else {
+      setTime("monthly")
+    }
+  } 
+
 
   return (
     <div className="w-full h-full flex justify-center md:w-[60%] md:h-[90%] lg:w-[65%]">
@@ -46,7 +54,7 @@ const Plans = () => {
         <div className="flex justify-evenly items-center bg-Magnolia mt-8 py-3 px-6">
           <p>Monthly</p>
           <div className="w-[50px] h-[25px] bg-Marineblue flex items-center m-auto px-1 rounded-3xl cursor-pointer transition-all duration-300 ">
-            <div className="bg-Alabaster rounded-full p-2 cursor-pointer transition-all duration-200"></div>
+            <div className={`bg-Alabaster rounded-full p-2 cursor-pointer ${time ==="monthly" ? "translate-x-0" : "translate-x-6"} transition-all duration-200`} onClick={changePlanTime} ></div>
           </div>
           <p>Yearly</p>
         </div>

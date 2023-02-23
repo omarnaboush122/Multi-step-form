@@ -28,7 +28,7 @@ const AddOns = ({ setStep }) => {
           Add-ons help enhance your gaming experience.
         </p>
         <div className="flex flex-col mt-10 gap-6">
-          <div className="flex justify-around items-center w-full py-2 px-4 bg-Alabaster border border-Purplishblue rounded-xl cursor-pointer">
+          <div className={`${inputs.service && "bg-Magnolia"} flex justify-around items-center w-full py-2 px-4 bg-Alabaster border border-Purplishblue rounded-xl cursor-pointer`}>
             <input
               type="checkbox"
               className="w-4 h-5 flex-[0.2] rounded-sm border border-Coolgray outline-none"
@@ -46,7 +46,7 @@ const AddOns = ({ setStep }) => {
             </div>
             <p className="text-sm flex-[0.2] text-Purplishblue">+$1/mo</p>
           </div>
-          <div className="flex justify-around items-center w-full py-2 px-4 bg-Alabaster border border-Purplishblue rounded-xl cursor-pointer">
+          <div className={`${inputs.storage && "bg-Magnolia"} flex justify-around items-center w-full py-2 px-4 bg-Alabaster border border-Purplishblue rounded-xl cursor-pointer`}>
             <input
               type="checkbox"
               className="w-4 h-5 flex-[0.2] rounded-sm border border-Coolgray outline-none"
@@ -64,7 +64,7 @@ const AddOns = ({ setStep }) => {
             </div>
             <p className="text-sm flex-[0.2] text-Purplishblue">+$2/mo</p>
           </div>
-          <div className="flex justify-around items-center w-full py-2 px-4 bg-Alabaster border border-Purplishblue rounded-xl cursor-pointer">
+          <div className={`${inputs.profile && "bg-Magnolia"} flex justify-around items-center w-full py-2 px-4 bg-Alabaster border border-Purplishblue rounded-xl cursor-pointer`}>
             <input
               type="checkbox"
               className="w-4 h-5 flex-[0.2] rounded-sm border border-Coolgray outline-none"

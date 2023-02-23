@@ -1,5 +1,5 @@
 const AddOns = ({ setStep, time, inputs, setInputs }) => {
-  
+
   const handleChange = (e) => {
     const { name, checked } = e.target;
 
@@ -28,7 +28,7 @@ const AddOns = ({ setStep, time, inputs, setInputs }) => {
               type="checkbox"
               className="w-4 h-5 flex-[0.2] rounded-sm border border-Coolgray outline-none"
               onChange={handleChange}
-              value={inputs.service}
+              checked={inputs.service}
               name="service"
             />
             <div className="mx-4 flex-[0.6]">
@@ -54,7 +54,7 @@ const AddOns = ({ setStep, time, inputs, setInputs }) => {
               type="checkbox"
               className="w-4 h-5 flex-[0.2] rounded-sm border border-Coolgray outline-none"
               onChange={handleChange}
-              value={inputs.storage}
+              checked={inputs.storage}
               name="storage"
             />
             <div className="mx-4 flex-[0.6]">
@@ -80,7 +80,7 @@ const AddOns = ({ setStep, time, inputs, setInputs }) => {
               type="checkbox"
               className="w-4 h-5 flex-[0.2] rounded-sm border border-Coolgray outline-none"
               onChange={handleChange}
-              value={inputs.profile}
+              checked={inputs.profile}
               name="profile"
             />
             <div className="mx-4 flex-[0.6]">

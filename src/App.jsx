@@ -101,7 +101,7 @@ const App = () => {
 
 }, [inputs.profile, time]);
 
-  console.log(services);
+  
 
   return (
     <div className="bg-Alabaster w-full h-full flex flex-col items-center rounded-xl md:w-[90vw] md:h-[90vh] md:flex-row md:justify-between md:p-3 lg:w-[900px]">
@@ -127,7 +127,7 @@ const App = () => {
         />
       )}
       {step === 4 && (
-        <Summary setStep={setStep} planInfo={planInfo} time={time} />
+        <Summary setStep={setStep} planInfo={planInfo} time={time} services={services} />
       )}
     </div>
   );

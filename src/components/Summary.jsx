@@ -1,4 +1,12 @@
-const Summary = ({ setStep, planInfo }) => {
+import SingleService from "./SingleService";
+
+const Summary = ({ setStep, planInfo, services }) => {
+  const allServices =
+    services &&
+    services.map((service) => (
+      <SingleService key={service.name} {...service} />
+    ));
+
   return (
     <div className="w-full h-full relative flex justify-center md:w-[60%] md:h-[90%] lg:w-[65%]">
       <div className="w-[430px] mx-auto h-auto py-10 px-5 flex flex-col rounded-xl">
@@ -18,18 +26,11 @@ const Summary = ({ setStep, planInfo }) => {
                 Change
               </button>
             </div>
-            <p className="text-Marineblue font-bold">+${planInfo.price}/{planInfo.duration}</p>
+            <p className="text-Marineblue font-bold">
+              +${planInfo.price}/{planInfo.duration}
+            </p>
           </div>
-          <div className="flex flex-col gap-3 py-3">
-            <div className="flex items-center justify-between">
-              <p className="text-Coolgray">Local Storage</p>
-              <p className="text-Marineblue">+$2/mo</p>
-            </div>
-            <div className="flex items-center justify-between">
-              <p className="text-Coolgray">Online service</p>
-              <p className="text-Marineblue">+$1/mo</p>
-            </div>
-          </div>
+          <div className="flex flex-col gap-3 py-3">{allServices}</div>
         </div>
         <div className="flex items-center justify-between py-3">
           <p className="text-Coolgray">Total (per month)</p>

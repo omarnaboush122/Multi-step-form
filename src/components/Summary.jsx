@@ -18,7 +18,7 @@ const Summary = ({ setStep, planInfo }) => {
                 Change
               </button>
             </div>
-            <p className="text-Marineblue font-bold">{planInfo.price}</p>
+            <p className="text-Marineblue font-bold">+${planInfo.price}/{planInfo.duration}</p>
           </div>
           <div className="flex flex-col gap-3 py-3">
             <div className="flex items-center justify-between">

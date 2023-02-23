@@ -1,21 +1,36 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const AddOns = ({ setStep,time }) => {
+const AddOns = ({ setStep, time, services, setServices }) => {
   const [inputs, setInputs] = useState({
     service: false,
     storage: false,
     profile: false,
   });
 
-
   const handleChange = (e) => {
-    const {name, checked} = e.target;
+    const { name, checked } = e.target;
 
     setInputs({
       ...inputs,
-      [name]: checked
-    })
+      [name]: checked,
+    });
   };
+
+  useEffect(() => {
+    if (inputs.service) {
+      setServices([
+        ...services,
+        {
+          name: "Online service",
+          price: time === "monthly" ? 1 : 10,
+          duration: time === "monthly" ? "mo" : "yr",
+        },
+      ]); 
+    } else {
+      setServices(services.filter(service => service.name !== "Online service"))
+    }
+  }, [inputs, time]);
+
 
 
   return (
@@ -28,7 +43,11 @@ const AddOns = ({ setStep,time }) => {
           Add-ons help enhance your gaming experience.
         </p>
         <div className="flex flex-col mt-10 gap-6">
-          <div className={`${inputs.service && "bg-Magnolia"} flex justify-around items-center w-full py-2 px-4 bg-Alabaster border border-Purplishblue rounded-xl cursor-pointer`}>
+          <div
+            className={`${
+              inputs.service && "bg-Magnolia"
+            } flex justify-around items-center w-full py-2 px-4 bg-Alabaster border border-Purplishblue rounded-xl cursor-pointer`}
+          >
             <input
               type="checkbox"
               className="w-4 h-5 flex-[0.2] rounded-sm border border-Coolgray outline-none"
@@ -44,9 +63,17 @@ const AddOns = ({ setStep,time }) => {
                 Access to multiplayer games
               </p>
             </div>
-            {time === "monthly" ? <p className="text-sm flex-[0.2] text-Purplishblue">+$1/mo</p> : <p className="text-sm flex-[0.2] text-Purplishblue">+$10/yr</p>}
+            {time === "monthly" ? (
+              <p className="text-sm flex-[0.2] text-Purplishblue">+$1/mo</p>
+            ) : (
+              <p className="text-sm flex-[0.2] text-Purplishblue">+$10/yr</p>
+            )}
           </div>
-          <div className={`${inputs.storage && "bg-Magnolia"} flex justify-around items-center w-full py-2 px-4 bg-Alabaster border border-Purplishblue rounded-xl cursor-pointer`}>
+          <div
+            className={`${
+              inputs.storage && "bg-Magnolia"
+            } flex justify-around items-center w-full py-2 px-4 bg-Alabaster border border-Purplishblue rounded-xl cursor-pointer`}
+          >
             <input
               type="checkbox"
               className="w-4 h-5 flex-[0.2] rounded-sm border border-Coolgray outline-none"
@@ -62,9 +89,17 @@ const AddOns = ({ setStep,time }) => {
                 Extra 1TB of cloud save
               </p>
             </div>
-            {time === "monthly" ? <p className="text-sm flex-[0.2] text-Purplishblue">+$2/mo</p> : <p className="text-sm flex-[0.2] text-Purplishblue">+$20/yr</p>}
+            {time === "monthly" ? (
+              <p className="text-sm flex-[0.2] text-Purplishblue">+$2/mo</p>
+            ) : (
+              <p className="text-sm flex-[0.2] text-Purplishblue">+$20/yr</p>
+            )}
           </div>
-          <div className={`${inputs.profile && "bg-Magnolia"} flex justify-around items-center w-full py-2 px-4 bg-Alabaster border border-Purplishblue rounded-xl cursor-pointer`}>
+          <div
+            className={`${
+              inputs.profile && "bg-Magnolia"
+            } flex justify-around items-center w-full py-2 px-4 bg-Alabaster border border-Purplishblue rounded-xl cursor-pointer`}
+          >
             <input
               type="checkbox"
               className="w-4 h-5 flex-[0.2] rounded-sm border border-Coolgray outline-none"
@@ -80,7 +115,11 @@ const AddOns = ({ setStep,time }) => {
                 Custom theme on your profile
               </p>
             </div>
-            {time === "monthly" ? <p className="text-sm flex-[0.2] text-Purplishblue">+$2/mo</p> : <p className="text-sm flex-[0.2] text-Purplishblue">+$20/yr</p>}
+            {time === "monthly" ? (
+              <p className="text-sm flex-[0.2] text-Purplishblue">+$2/mo</p>
+            ) : (
+              <p className="text-sm flex-[0.2] text-Purplishblue">+$20/yr</p>
+            )}
           </div>
         </div>
         <div className="flex justify-between items-center mt-16">

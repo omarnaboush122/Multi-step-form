@@ -7,6 +7,7 @@ const Summary = ({ setStep, planInfo, services }) => {
       <SingleService key={service.name} {...service} />
     ));
 
+
   return (
     <div className="w-full h-full relative flex justify-center md:w-[60%] md:h-[90%] lg:w-[65%]">
       <div className="w-[430px] mx-auto h-auto py-10 px-5 flex flex-col rounded-xl">

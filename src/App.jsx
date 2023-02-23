@@ -10,7 +10,12 @@ const App = () => {
   const [plan, setPlan] = useState(1);
   const [time, setTime] = useState("monthly");
   const [planInfo, setPlanInfo] = useState({});
-  const [services,setServices] = useState([]);
+  const [services, setServices] = useState([]);
+  const [inputs, setInputs] = useState({
+    service: false,
+    storage: false,
+    profile: false,
+  });
 
   useEffect(() => {
     switch (plan) {
@@ -18,27 +23,83 @@ const App = () => {
         setPlanInfo({
           name: "Arcade",
           price: time === "monthly" ? 9 : 90,
-          duration: time === "monthly" ? "mo" : "yr"
+          duration: time === "monthly" ? "mo" : "yr",
         });
         break;
       case 2:
         setPlanInfo({
           name: "Advanced",
           price: time === "monthly" ? 12 : 120,
-          duration: time === "monthly" ? "mo" : "yr"
+          duration: time === "monthly" ? "mo" : "yr",
         });
         break;
       case 3:
         setPlanInfo({
           name: "Pro",
           price: time === "monthly" ? 15 : 150,
-          duration: time === "monthly" ? "mo" : "yr"
+          duration: time === "monthly" ? "mo" : "yr",
         });
         break;
       default:
         setPlanInfo("No Plan available");
     }
-  }, [plan,time]);
+  }, [plan, time]);
+
+  useEffect(() => {
+    
+    if (inputs.service) {
+      setServices([
+        ...services,
+        {
+          name: "Online service",
+          price: time === "monthly" ? 1 : 10,
+          duration: time === "monthly" ? "mo" : "yr",
+        },
+      ]);
+    } else {
+      setServices(
+        services.filter((service) => service.name !== "Online service")
+      );
+    }
+  }, [inputs.service, time]);
+
+  useEffect(() => {
+  
+      if (inputs.storage) {
+        setServices([
+          ...services,
+          {
+            name: "Larger storage",
+            price: time === "monthly" ? 2 : 20,
+            duration: time === "monthly" ? "mo" : "yr",
+          },
+        ]);
+      } else {
+        setServices(
+          services.filter((service) => service.name !== "Larger storage")
+        );
+      }
+
+  }, [inputs.storage, time]);
+
+  useEffect(() => {
+  
+    if (inputs.profile) {
+      setServices([
+        ...services,
+        {
+          name: "Customizable Profile",
+          price: time === "monthly" ? 2 : 20,
+          duration: time === "monthly" ? "mo" : "yr",
+        },
+      ]);
+    } else {
+      setServices(
+        services.filter((service) => service.name !== "Customizable Profile")
+      );
+    }
+
+}, [inputs.profile, time]);
 
   console.log(services);
 
@@ -55,8 +116,19 @@ const App = () => {
           setTime={setTime}
         />
       )}
-      {step === 3 && <AddOns setStep={setStep} time={time} services={services} setServices={setServices} />}
-      {step === 4 && <Summary setStep={setStep} planInfo={planInfo} time={time} />}
+      {step === 3 && (
+        <AddOns
+          setStep={setStep}
+          time={time}
+          services={services}
+          setServices={setServices}
+          inputs={inputs}
+          setInputs={setInputs}
+        />
+      )}
+      {step === 4 && (
+        <Summary setStep={setStep} planInfo={planInfo} time={time} />
+      )}
     </div>
   );
 };

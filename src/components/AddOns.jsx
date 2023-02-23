@@ -1,12 +1,5 @@
-import { useEffect, useState } from "react";
-
-const AddOns = ({ setStep, time, services, setServices }) => {
-  const [inputs, setInputs] = useState({
-    service: false,
-    storage: false,
-    profile: false,
-  });
-
+const AddOns = ({ setStep, time, inputs, setInputs }) => {
+  
   const handleChange = (e) => {
     const { name, checked } = e.target;
 
@@ -15,23 +8,6 @@ const AddOns = ({ setStep, time, services, setServices }) => {
       [name]: checked,
     });
   };
-
-  useEffect(() => {
-    if (inputs.service) {
-      setServices([
-        ...services,
-        {
-          name: "Online service",
-          price: time === "monthly" ? 1 : 10,
-          duration: time === "monthly" ? "mo" : "yr",
-        },
-      ]); 
-    } else {
-      setServices(services.filter(service => service.name !== "Online service"))
-    }
-  }, [inputs, time]);
-
-
 
   return (
     <div className="w-full h-full relative flex justify-center sm:w-[60%] sm:h-[90%] lg:w-[65%]">

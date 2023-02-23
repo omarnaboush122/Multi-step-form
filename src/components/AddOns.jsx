@@ -24,7 +24,7 @@ const AddOns = ({ setStep }) => {
         <h1 className="mb-1 text-Marineblue text-3xl font-bold sm:text-4xl">
           Pick add-ons
         </h1>
-        <p className="text-Coolgray text-lg">
+        <p className="text-Coolgray">
           Add-ons help enhance your gaming experience.
         </p>
         <div className="flex flex-col mt-10 gap-6">
@@ -37,7 +37,7 @@ const AddOns = ({ setStep }) => {
               name="service"
             />
             <div className="mx-5 flex-[0.6]">
-              <h3 className="text-sm text-Marineblue font-bold mb-1 md:text-base">
+              <h3 className="text-sm text-Marineblue font-bold md:text-base">
                 Online service
               </h3>
               <p className="text-xs text-Coolgray md:text-sm">
@@ -55,7 +55,7 @@ const AddOns = ({ setStep }) => {
               name="storage"
             />
             <div className="mx-5 flex-[0.6]">
-              <h3 className="text-sm text-Marineblue font-bold mb-1 md:text-base">
+              <h3 className="text-sm text-Marineblue font-bold md:text-base">
                 Larger storage
               </h3>
               <p className="text-xs text-Coolgray md:text-sm">
@@ -73,7 +73,7 @@ const AddOns = ({ setStep }) => {
               name="profile"
             />
             <div className="mx-5 flex-[0.6]">
-              <h3 className="text-sm text-Marineblue font-bold mb-1 md:text-base">
+              <h3 className="text-sm text-Marineblue font-bold md:text-base">
                 Customizable Profile
               </h3>
               <p className="text-xs text-Coolgray md:text-sm">

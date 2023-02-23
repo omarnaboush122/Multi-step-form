@@ -3,6 +3,7 @@ import AddOns from "./components/AddOns";
 import PersonalInfo from "./components/Personal-Info";
 import Plans from "./components/Plans";
 import Sidebar from "./components/Sidebar";
+import Summary from "./components/Summary";
 
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
     { step === 1 && <PersonalInfo setStep={setStep} /> }
     { step === 2 && <Plans setStep={setStep} /> }
     { step === 3 && <AddOns setStep={setStep} /> }
+    { step === 4 && <Summary setStep={setStep} /> }
     </div>
   );
 }

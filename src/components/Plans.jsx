@@ -15,11 +15,7 @@ const Plans = ({ setStep }) => {
   };
 
   const changePlanTime = () => {
-    if (time === "monthly") {
-      setTime("yearly");
-    } else {
-      setTime("monthly");
-    }
+    time === "monthly" ? setTime("yearly") : setTime("monthly");
   };
 
   return (
@@ -28,7 +24,7 @@ const Plans = ({ setStep }) => {
         <h1 className="mb-1 text-Marineblue text-3xl font-bold md:text-4xl">
           Select your plan
         </h1>
-        <p className="text-Coolgray text-lg">
+        <p className="text-Coolgray">
           You have the option of monthly or yearly billing.
         </p>
         <div className="flex flex-col gap-5 mt-5 md:flex-row">

@@ -62,7 +62,7 @@ const PersonalInfo = ({ setStep }) => {
         <h1 className="mb-1 text-Marineblue text-3xl font-bold md:text-4xl">
           Personal info
         </h1>
-        <p className="text-Coolgray text-lg">
+        <p className="text-Coolgray">
           Please provide your name, email address, and phone number.
         </p>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-5">

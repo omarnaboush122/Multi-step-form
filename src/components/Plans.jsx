@@ -1,17 +1,53 @@
 import { useState } from "react";
 
-const Plans = ({ setStep }) => {
+const Plans = ({ setStep, setPlanInfo }) => {
   const [plan, setPlan] = useState(1);
   const [time, setTime] = useState("monthly");
 
   const firstPlan = () => {
     setPlan(1);
+
+    if (time === "monthly") {
+      setPlanInfo({
+        name: "Arcade",
+        price: "$9/mo",
+      });
+    } else {
+      setPlanInfo({
+        name: "Arcade",
+        price: "$90/yr",
+      });
+    }
   };
   const secondPlan = () => {
     setPlan(2);
+
+    if (time === "monthly") {
+      setPlanInfo({
+        name: "Advanced",
+        price: "$12/mo",
+      });
+    } else {
+      setPlanInfo({
+        name: "Advanced",
+        price: "$120/yr",
+      });
+    }
   };
   const thirdPlan = () => {
     setPlan(3);
+
+    if (time === "monthly") {
+      setPlanInfo({
+        name: "Pro",
+        price: "$15/mo",
+      });
+    } else {
+      setPlanInfo({
+        name: "Pro",
+        price: "$150/yr",
+      });
+    }
   };
 
   const changePlanTime = () => {

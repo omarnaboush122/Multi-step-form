@@ -1,4 +1,4 @@
-const Summary = () => {
+const Summary = ({setStep}) => {
   return (
     <div className="w-full h-full relative flex justify-center md:w-[60%] md:h-[90%] lg:w-[65%]">
       <div className="w-[430px] mx-auto h-auto py-10 px-5 flex flex-col rounded-xl">
@@ -30,6 +30,20 @@ const Summary = () => {
         <div className="flex items-center justify-between py-3">
           <p className="text-Coolgray">Total (per month)</p>
           <p className="text-Purplishblue font-bold">+$12/mo</p>
+        </div>
+        <div className="flex justify-between items-center mt-16">
+          <button
+            onClick={() => setStep(3)}
+            className="text-Coolgray text-xl cursor-pointer hover:text-Marineblue hover:font-bold transition-colors duration-300"
+          >
+            Go Back
+          </button>
+          <button
+            onClick={() => setStep(5)}
+            className="text-White bg-Marineblue py-3 px-6 rounded-md cursor-pointer hover:bg-Purplishblue transition-colors duration-300"
+          >
+            Confirm
+          </button>
         </div>
       </div>
     </div>

@@ -36,7 +36,7 @@ const AddOns = ({ setStep }) => {
               value={inputs.service}
               name="service"
             />
-            <div className="mx-5 flex-[0.6]">
+            <div className="mx-4 flex-[0.6]">
               <h3 className="text-sm text-Marineblue font-bold md:text-base">
                 Online service
               </h3>
@@ -54,7 +54,7 @@ const AddOns = ({ setStep }) => {
               value={inputs.storage}
               name="storage"
             />
-            <div className="mx-5 flex-[0.6]">
+            <div className="mx-4 flex-[0.6]">
               <h3 className="text-sm text-Marineblue font-bold md:text-base">
                 Larger storage
               </h3>
@@ -72,7 +72,7 @@ const AddOns = ({ setStep }) => {
               value={inputs.profile}
               name="profile"
             />
-            <div className="mx-5 flex-[0.6]">
+            <div className="mx-4 flex-[0.6]">
               <h3 className="text-sm text-Marineblue font-bold md:text-base">
                 Customizable Profile
               </h3>

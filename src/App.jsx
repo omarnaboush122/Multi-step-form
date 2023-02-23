@@ -8,6 +8,7 @@ import Summary from "./components/Summary";
 
 const App = () => {
   const [step, setStep] = useState(1);
+  
 
   return (
     <div className="bg-Alabaster w-full h-full flex flex-col items-center rounded-xl md:w-[90vw] md:h-[90vh] md:flex-row md:justify-between md:p-3 lg:w-[900px]" >

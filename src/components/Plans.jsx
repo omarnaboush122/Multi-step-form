@@ -1,7 +1,12 @@
-import { useState } from "react";
-
-const Plans = ({ plan,setPlan, time, setTime, setStep }) => {
-
+const Plans = ({
+  plan,
+  setPlan,
+  time,
+  setTime,
+  setStep,
+  setServices,
+  setInputs,
+}) => {
   const firstPlan = () => {
     setPlan(1);
   };
@@ -16,8 +21,13 @@ const Plans = ({ plan,setPlan, time, setTime, setStep }) => {
 
   const changePlanTime = () => {
     time === "monthly" ? setTime("yearly") : setTime("monthly");
+    setServices([]);
+    setInputs({
+      service: false,
+      storage: false,
+      profile: false,
+    });
   };
-
 
   return (
     <div className="w-full h-full relative flex justify-center md:w-[60%] md:h-[90%] lg:w-[65%]">

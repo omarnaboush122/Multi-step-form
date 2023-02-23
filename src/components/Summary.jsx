@@ -1,12 +1,17 @@
 import SingleService from "./SingleService";
 
-const Summary = ({ setStep, planInfo, services }) => {
+const Summary = ({ setStep, planInfo, services, time }) => {
   const allServices =
     services &&
     services.map((service) => (
       <SingleService key={service.name} {...service} />
     ));
 
+  const servicesPrice = services.map((service) => service.price);
+
+  const totalServicesPrice = servicesPrice.reduce((acc, curr) => {
+    return acc + curr;
+  }, 0);
 
   return (
     <div className="w-full h-full relative flex justify-center md:w-[60%] md:h-[90%] lg:w-[65%]">
@@ -21,9 +26,9 @@ const Summary = ({ setStep, planInfo, services }) => {
           <div className="flex items-center justify-between pt-3 py-5 border-b border-b-Lightblue">
             <div>
               <p className="text-Marineblue font-bold">
-                {planInfo.name} (Monthly)
+                {planInfo.name} ({time === "monthly" ? "Monthly" : "Yearly"})
               </p>
-              <button className="underline decoration-Marineblue decoration-solid decoration-1 text-Purplishblue">
+              <button onClick={() => setStep(2)} className="underline decoration-Marineblue decoration-solid decoration-1 text-Purplishblue">
                 Change
               </button>
             </div>
@@ -34,8 +39,10 @@ const Summary = ({ setStep, planInfo, services }) => {
           <div className="flex flex-col gap-3 py-3">{allServices}</div>
         </div>
         <div className="flex items-center justify-between py-3">
-          <p className="text-Coolgray">Total (per month)</p>
-          <p className="text-Purplishblue font-bold">+$12/mo</p>
+          <p className="text-Coolgray">Total ({time === "monthly" ? "per month" : "per year"})</p>
+          <p className="text-Purplishblue font-bold">
+            +${totalServicesPrice + planInfo.price}/{planInfo.duration}
+          </p>
         </div>
         <div className="flex justify-between items-center mt-16">
           <button

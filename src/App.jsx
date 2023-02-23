@@ -102,14 +102,6 @@ const App = () => {
 }, [inputs.profile, time]);
 
 
-const servicesPrice = services.map(service => service.price)
-
-const totalServicesPrice = servicesPrice.reduce((acc,curr) => {
-  return acc + curr;
-},0)
-  
-console.log(totalServicesPrice);
-
   return (
     <div className="bg-Alabaster w-full h-full flex flex-col items-center rounded-xl md:w-[90vw] md:h-[90vh] md:flex-row md:justify-between md:p-3 lg:w-[900px]">
       <Sidebar step={step} />
@@ -121,6 +113,8 @@ console.log(totalServicesPrice);
           setPlan={setPlan}
           time={time}
           setTime={setTime}
+          setServices={setServices}
+          setInputs={setInputs}
         />
       )}
       {step === 3 && (

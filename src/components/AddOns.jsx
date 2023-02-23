@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const AddOns = ({ setStep }) => {
+const AddOns = ({ setStep,time }) => {
   const [inputs, setInputs] = useState({
     service: false,
     storage: false,
@@ -44,7 +44,7 @@ const AddOns = ({ setStep }) => {
                 Access to multiplayer games
               </p>
             </div>
-            <p className="text-sm flex-[0.2] text-Purplishblue">+$1/mo</p>
+            {time === "monthly" ? <p className="text-sm flex-[0.2] text-Purplishblue">+$1/mo</p> : <p className="text-sm flex-[0.2] text-Purplishblue">+$10/yr</p>}
           </div>
           <div className={`${inputs.storage && "bg-Magnolia"} flex justify-around items-center w-full py-2 px-4 bg-Alabaster border border-Purplishblue rounded-xl cursor-pointer`}>
             <input
@@ -62,7 +62,7 @@ const AddOns = ({ setStep }) => {
                 Extra 1TB of cloud save
               </p>
             </div>
-            <p className="text-sm flex-[0.2] text-Purplishblue">+$2/mo</p>
+            {time === "monthly" ? <p className="text-sm flex-[0.2] text-Purplishblue">+$2/mo</p> : <p className="text-sm flex-[0.2] text-Purplishblue">+$20/yr</p>}
           </div>
           <div className={`${inputs.profile && "bg-Magnolia"} flex justify-around items-center w-full py-2 px-4 bg-Alabaster border border-Purplishblue rounded-xl cursor-pointer`}>
             <input
@@ -80,7 +80,7 @@ const AddOns = ({ setStep }) => {
                 Custom theme on your profile
               </p>
             </div>
-            <p className="text-sm flex-[0.2] text-Purplishblue">+$2/mo</p>
+            {time === "monthly" ? <p className="text-sm flex-[0.2] text-Purplishblue">+$2/mo</p> : <p className="text-sm flex-[0.2] text-Purplishblue">+$20/yr</p>}
           </div>
         </div>
         <div className="flex justify-between items-center mt-16">

@@ -1,33 +1,8 @@
-const Plans = ({
-  plan,
-  setPlan,
-  time,
-  setTime,
-  setStep,
-  setServices,
-  setInputs,
-}) => {
-  const firstPlan = () => {
-    setPlan(1);
-  };
+import { useContext } from "react";
+import { Context } from "../Context";
 
-  const secondPlan = () => {
-    setPlan(2);
-  };
-
-  const thirdPlan = () => {
-    setPlan(3);
-  };
-
-  const changePlanTime = () => {
-    time === "monthly" ? setTime("yearly") : setTime("monthly");
-    setServices([]);
-    setInputs({
-      service: false,
-      storage: false,
-      profile: false,
-    });
-  };
+const Plans = () => {
+  const { setStep, plan, setPlan, time, changePlanTime } = useContext(Context);
 
   return (
     <div className="w-full h-full relative flex justify-center md:w-[60%] md:h-[90%] lg:w-[65%]">
@@ -40,7 +15,7 @@ const Plans = ({
         </p>
         <div className="flex flex-col gap-5 mt-5 md:flex-row">
           <div
-            onClick={firstPlan}
+            onClick={() => setPlan(1)}
             className={`${
               plan === 1 && "bg-Lightblue border-Purplishblue"
             } flex items-center gap-3 w-full h-auto border border-Coolgray p-4 rounded-xl cursor-pointer hover:bg-Lightblue hover:border-Purplishblue transition-colors duration-300 ease-in-out md:flex-col md:justify-between md:items-start md:w-[150px] md:gap-12`}
@@ -61,7 +36,7 @@ const Plans = ({
             </div>
           </div>
           <div
-            onClick={secondPlan}
+            onClick={() => setPlan(2)}
             className={`${
               plan === 2 && "bg-Lightblue border-Purplishblue"
             } flex items-center gap-3 w-full h-auto border border-Coolgray p-4 rounded-xl cursor-pointer hover:bg-Lightblue hover:border-Purplishblue transition-colors duration-300 ease-in-out md:flex-col md:justify-between md:items-start md:w-[150px] md:gap-12`}
@@ -82,7 +57,7 @@ const Plans = ({
             </div>
           </div>
           <div
-            onClick={thirdPlan}
+            onClick={() => setPlan(3)}
             className={`${
               plan === 3 && "bg-Lightblue border-Purplishblue"
             } flex items-center gap-3 w-full h-auto border border-Coolgray p-4 rounded-xl cursor-pointer hover:bg-Lightblue hover:border-Purplishblue transition-colors duration-300 ease-in-out md:flex-col md:justify-between md:items-start md:w-[150px] md:gap-12`}

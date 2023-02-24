@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { Context } from "../Context";
 
-const PersonalInfo = ({ setStep }) => {
+const PersonalInfo = () => {
+  const { setStep } = useContext(Context);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");

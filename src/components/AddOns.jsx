@@ -1,4 +1,8 @@
-const AddOns = ({ setStep, time, inputs, setInputs }) => {
+import { useContext } from "react";
+import { Context } from "../Context";
+
+const AddOns = () => {
+  const { inputs, setInputs, time, setStep } = useContext(Context);
 
   const handleChange = (e) => {
     const { name, checked } = e.target;

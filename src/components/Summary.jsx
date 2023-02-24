@@ -1,6 +1,11 @@
+import { useContext } from "react";
+import { Context } from "../Context";
 import SingleService from "./SingleService";
 
-const Summary = ({ setStep, planInfo, services, time }) => {
+const Summary = () => {
+  const { services, time, planInfo, setStep } =
+    useContext(Context);
+
   const allServices =
     services &&
     services.map((service) => (
@@ -28,7 +33,10 @@ const Summary = ({ setStep, planInfo, services, time }) => {
               <p className="text-Marineblue font-bold">
                 {planInfo.name} ({time === "monthly" ? "Monthly" : "Yearly"})
               </p>
-              <button onClick={() => setStep(2)} className="underline decoration-Marineblue decoration-solid decoration-1 text-Purplishblue">
+              <button
+                onClick={() => setStep(2)}
+                className="underline decoration-Marineblue decoration-solid decoration-1 text-Purplishblue"
+              >
                 Change
               </button>
             </div>
@@ -39,7 +47,9 @@ const Summary = ({ setStep, planInfo, services, time }) => {
           <div className="flex flex-col gap-3 py-3">{allServices}</div>
         </div>
         <div className="flex items-center justify-between p-3">
-          <p className="text-Coolgray">Total ({time === "monthly" ? "per month" : "per year"})</p>
+          <p className="text-Coolgray">
+            Total ({time === "monthly" ? "per month" : "per year"})
+          </p>
           <p className="text-Purplishblue text-lg font-bold">
             +${totalServicesPrice + planInfo.price}/{planInfo.duration}
           </p>

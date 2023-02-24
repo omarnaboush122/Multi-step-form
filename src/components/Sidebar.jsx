@@ -1,6 +1,8 @@
+import { useContext } from "react";
+import { Context } from "../Context";
 
-
-const Sidebar = ({step}) => {
+const Sidebar = () => {
+  const { step } = useContext(Context);
 
   return (
     <div className="sidebar h-[35%] w-full rounded-none md:w-[35%] md:h-full md:rounded-xl">
@@ -14,8 +16,12 @@ const Sidebar = ({step}) => {
             1
           </div>
           <div className="hidden md:block">
-            <p className="text-Coolgray uppercase text-xs font-medium">Step 1</p>
-            <p className="text-White uppercase font-bold tracking-wider">Your info</p>
+            <p className="text-Coolgray uppercase text-xs font-medium">
+              Step 1
+            </p>
+            <p className="text-White uppercase font-bold tracking-wider">
+              Your info
+            </p>
           </div>
         </div>
         <div className="md:flex md:items-center gap-5">
@@ -27,8 +33,12 @@ const Sidebar = ({step}) => {
             2
           </div>
           <div className="hidden md:block">
-            <p className="text-Coolgray uppercase text-xs font-medium">Step 2</p>
-            <p className="text-White uppercase font-bold tracking-wider">Select plan</p>
+            <p className="text-Coolgray uppercase text-xs font-medium">
+              Step 2
+            </p>
+            <p className="text-White uppercase font-bold tracking-wider">
+              Select plan
+            </p>
           </div>
         </div>
         <div className="md:flex md:items-center gap-5">
@@ -40,21 +50,29 @@ const Sidebar = ({step}) => {
             3
           </div>
           <div className="hidden md:block">
-            <p className="text-Coolgray uppercase text-xs font-medium">Step 3</p>
-            <p className="text-White uppercase font-bold tracking-wider">Add-ons</p>
+            <p className="text-Coolgray uppercase text-xs font-medium">
+              Step 3
+            </p>
+            <p className="text-White uppercase font-bold tracking-wider">
+              Add-ons
+            </p>
           </div>
         </div>
         <div className="md:flex md:items-center gap-5">
           <div
             className={`w-10 h-10 rounded-full flex justify-center items-center -mt-5 mr-5 border border-White cursor-pointer ${
-              step === 4 ? "bg-Lightblue" : "text-White"
+              step === 4 || step === 5 ? "bg-Lightblue" : "text-White"
             } md:mr-0 md:my-4`}
           >
             4
           </div>
           <div className="hidden md:block">
-            <p className="text-Coolgray uppercase text-xs font-medium">Step 4</p>
-            <p className="text-White uppercase font-bold tracking-wider">Summary</p>
+            <p className="text-Coolgray uppercase text-xs font-medium">
+              Step 4
+            </p>
+            <p className="text-White uppercase font-bold tracking-wider">
+              Summary
+            </p>
           </div>
         </div>
       </div>

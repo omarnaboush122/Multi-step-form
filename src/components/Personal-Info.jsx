@@ -84,7 +84,7 @@ const PersonalInfo = ({ setStep }) => {
               value={name}
             />
             {isNameError && (
-              <p className="absolute top-2 right-0 text-Strawberryred text-xs font-bold md:right-12">
+              <p className="absolute top-2 right-0 text-Strawberryred text-xs font-bold">
                 Please input only letters from A-Z
               </p>
             )}
@@ -107,7 +107,7 @@ const PersonalInfo = ({ setStep }) => {
               value={email}
             />
             {isEmailError && (
-              <p className="absolute top-2 right-0 text-Strawberryred text-xs font-bold md:right-12">
+              <p className="absolute top-2 right-0 text-Strawberryred text-xs font-bold">
                 This field is required
               </p>
             )}
@@ -130,7 +130,7 @@ const PersonalInfo = ({ setStep }) => {
               value={phoneNumber}
             />
             {isPhoneNumberError && (
-              <p className="absolute top-2 right-0 text-Strawberryred text-xs font-bold md:right-12">
+              <p className="absolute top-2 right-0 text-Strawberryred text-xs font-bold">
                 This field is required
               </p>
             )}

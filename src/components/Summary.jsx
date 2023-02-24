@@ -40,7 +40,7 @@ const Summary = ({ setStep, planInfo, services, time }) => {
         </div>
         <div className="flex items-center justify-between p-3">
           <p className="text-Coolgray">Total ({time === "monthly" ? "per month" : "per year"})</p>
-          <p className="text-Purplishblue font-bold">
+          <p className="text-Purplishblue text-lg font-bold">
             +${totalServicesPrice + planInfo.price}/{planInfo.duration}
           </p>
         </div>

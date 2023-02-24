@@ -60,7 +60,7 @@ const PersonalInfo = () => {
 
   return (
     <div className="w-full h-full relative flex justify-center md:w-[60%] md:h-[90%] lg:w-[65%]">
-      <div className="w-[430px] mx-auto h-auto py-10 px-5 flex flex-col rounded-xl">
+      <div className="w-[430px] mx-auto h-auto p-5 flex flex-col rounded-xl">
         <h1 className="mb-1 text-Marineblue text-3xl font-bold md:text-4xl">
           Personal info
         </h1>
@@ -137,7 +137,7 @@ const PersonalInfo = () => {
               </p>
             )}
           </div>
-          <div className="w-full flex justify-between items-center mt-16">
+          <div className="w-full flex justify-between items-center mt-8">
             <div></div>
             <button className="text-White bg-Marineblue py-3 px-6 rounded-md cursor-pointer hover:bg-Purplishblue transition-colors duration-300">
               Next Step

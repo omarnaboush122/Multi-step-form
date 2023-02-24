@@ -6,7 +6,7 @@ const Plans = () => {
 
   return (
     <div className="w-full h-full relative flex justify-center md:w-[60%] md:h-[90%] lg:w-[65%]">
-      <div className="w-[430px] mx-auto h-auto py-10 px-5 flex flex-col rounded-xl">
+      <div className="w-[430px] mx-auto h-auto p-5 flex flex-col rounded-xl">
         <h1 className="mb-1 text-Marineblue text-3xl font-bold md:text-4xl">
           Select your plan
         </h1>

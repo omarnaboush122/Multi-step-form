@@ -38,7 +38,7 @@ const Summary = ({ setStep, planInfo, services, time }) => {
           </div>
           <div className="flex flex-col gap-3 py-3">{allServices}</div>
         </div>
-        <div className="flex items-center justify-between py-3">
+        <div className="flex items-center justify-between p-3">
           <p className="text-Coolgray">Total ({time === "monthly" ? "per month" : "per year"})</p>
           <p className="text-Purplishblue font-bold">
             +${totalServicesPrice + planInfo.price}/{planInfo.duration}

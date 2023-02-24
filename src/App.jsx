@@ -4,6 +4,7 @@ import PersonalInfo from "./components/Personal-Info";
 import Plans from "./components/Plans";
 import Sidebar from "./components/Sidebar";
 import Summary from "./components/Summary";
+import Thanks from "./components/Thanks";
 
 const App = () => {
   const [step, setStep] = useState(1);
@@ -130,6 +131,10 @@ const App = () => {
       {step === 4 && (
         <Summary setStep={setStep} planInfo={planInfo} time={time} services={services} />
       )}
+
+      {
+        step === 5 && <Thanks/>
+      }
     </div>
   );
 };

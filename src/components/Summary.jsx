@@ -54,7 +54,7 @@ const Summary = () => {
             +${totalServicesPrice + planInfo.price}/{planInfo.duration}
           </p>
         </div>
-        <div className="flex justify-between items-center mt-16">
+        <div className="flex justify-between items-center mt-8">
           <button
             onClick={() => setStep(3)}
             className="text-Coolgray text-xl cursor-pointer hover:text-Marineblue hover:font-bold transition-colors duration-300"
